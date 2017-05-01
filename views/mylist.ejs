@@ -1,0 +1,25 @@
+<%- include header %>
+<div class="container">
+	<div class="row">
+	    <table class="table table-striped">
+		<caption>My Notes List</caption>
+		<thead>
+		    <tr>
+			<th>Title</th>
+			<th>Tag</th>
+			<th>Date</th>
+		    </tr>
+		</thead>
+		<tbody>
+		    <% notes.forEach(function(note){ %>
+		    <tr>
+			<td><a href="/detail/<%=note._id %>"><%=notes.title %></a></td>
+			<td><%=notes.tag %></td>
+			<td><%=notes.createTime %></td>
+		    </tr>
+		    <% }); %>
+		</tbody>
+	    </table>	
+	</div>
+</div>
+<%- include footer %>

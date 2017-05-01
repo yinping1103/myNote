@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title><%=title %></title>
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<!--<link rel="stylesheet" href="/node_modules/weui/dist/style/weui.min.css"/>-->
+		<link rel="stylesheet" href="/bower_components/weui/dist/style/weui.min.css"/>
+		<!--<link rel="stylesheet" href="/bower_components/weui/dist/example/example.css"/>-->
+		<link rel="stylesheet" href="/css/common.css">
+	</head>
+	<body ontouchstart>
+	
+	<div class="clearfix page-nav">
+	    <% if(user){ %>
+		<div class="pull-left nav-username">Welcome,<%= user.username %>!</div>
+		<div class="pull-left"><a href="/post">Post</a></div>
+		<div class="pull-right nav-quit"><a href="/quit">Quit</a></div>
+		
+	    <% }else{ %>
+		<div class="pull-right nav-register"><a href="/register">register</a></div>
+		<div calss="pull-fight nav-login"><a href="/login">login</a></div>
+		
+	    <% } %>
+	</div>

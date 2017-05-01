@@ -1,0 +1,32 @@
+<%- include header %><!--嵌入header文件-->
+<form method="post">
+<div class="page">
+    <div class="page__bd page__bd_spacing">
+	<div class="weui-cells weui-cells_form">
+	    <div class="weui-cell">
+		<div class="weui-cell__hd"><label class="weui-label">Title</label></div>
+		<div class="weui-cell__bd">
+		    <input class="weui-input" type="text" name="title" placeholder="Title"/>
+		</div>
+	    </div>
+	    <div class="weui-cell">
+		<div class="weui-cell__hd"><label class="weui-label">Tag</label></div>
+		<div class="weui-cell__bd">
+		    <input class="weui-input" type="text" name="tag" placeholder="Tag"/>
+		</div>
+	    </div>
+	    <div class="weui-cell">
+		<div class="weui-cell__bd">
+		    <textarea class="weui-textarea" name="content" placeholder="Content" rows="3"></textarea>
+		    <div class="weui-textarea-counter"><span>0</span>/200</div>
+		</div>
+	    </div>
+	</div>
+	<div class="btn-sp-area">
+	    <button type="submit" class="weui-btn weui-btn_primary">Post</button>
+	</div>
+    </div>
+</div>
+</form>
+
+<%- include footer %><!--嵌入footer文件-->

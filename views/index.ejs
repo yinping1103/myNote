@@ -1,0 +1,29 @@
+<%- include header %><!--嵌入header文件-->
+<div class="page">
+    <div class="page__bd">
+	    <div class="weui-cells__title">My Notes List</div>
+
+ 	    <div class="weui-panel">
+		    <div class="weui-panel__bd">
+		    <% if(notes){ %><!--无缓冲的条件语句元素-->
+	    		<% notes.forEach(function(note){ %><!--对于查找到的文件一次进行如下操作-->
+			    <div class="weui-media-box weui-media-box_text">
+	    			<a href="/detail/<%=note._id %>">
+				    <h4 class="weui-media-box__title"><%=note.title %></h4>
+				    <p class="weui-media-box__desc"><%=note.tag %></p>
+				    <ul class="weui-media-box__info">
+		    			<li class="weui-media-box__info__meta"><%=note.createTime %></li>
+				    </ul>
+	    			</a>
+
+			    </div>
+	    		<% }); %>
+		    <% } %>
+
+		    </div>
+	    </div>
+
+  </div>
+</div>
+
+<%- include footer %><!--嵌入footer文件-->

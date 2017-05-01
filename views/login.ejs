@@ -1,0 +1,36 @@
+<%- include header %><!--嵌入header文件-->
+	<div class="text-center page-title">User Login</div>
+	<% if(error){ %><!--判断如果error不为空 则使用微信样式在页面中将相应错误打印-->
+  	<div class="alert alert-warning"><%= error %></div>
+	<% error='' %>
+	<% } %>
+	<!--通过微信样式表展现页面-->
+	<form method="post">
+	<div class="form-group">
+	<div class="page">
+	    <div class="page__bd page__bd_spacing">
+		<div class="weui-cells weui-cells_form">
+		<div class="weui-cell">
+		    <div class="weui-cell__hd"><label class="weui-label">Username</label></div>
+		    <div class="weui-cell__bd">
+			<input type="text" class="weui-input" name="username" placeholder="Username"/>
+		    </div>
+		</div>
+
+		<div class="weui-cell">
+		    <div class="weui-cell__hd"><label class="weui-label">Password</label></div>
+		    <div class="weui-cell__bd">
+			<input type="password" class="weui-input" name="password" placeholder="Password"/>
+		    </div>
+		</div>
+
+		</div>
+		<div class="btn-sp-area">
+	    	    <button type="submit" class="weui-btn weui-btn_primary">Login</button>
+		</div>
+	    </div>
+	</div>
+	</div>
+	</form>
+
+<%- include footer %><!--嵌入footer文件-->
