@@ -87,38 +87,39 @@ app.post('/register',function(req,res){//获得在/register页面提交的数据
 	var passwordRepeat=req.body.passwordRepeat;//用户在注册时二次提交的密码
 
 	if(username.trim().length==0){//判断提交username的长度是否等于0
-	error="The username can not be empty !";//如果是就将错误内容记录为username不可以为空
+	error="用户名不能为空 !";//如果是就将错误内容记录为username不可以为空
 	console.log("Username cannot be empty!");
 	return res.redirect('/register');//重新刷新/register页面
 	}
 	if(username.trim().length<3||username.trim().length>20){//判断提交的username的长度是否在3-20范围之外
-	error+="The username length should be in [3-20] !";//若是 将错误值设置为用户名长度错误
-	console.log("Username length if out of range!");
+	error+="用户名长度在3-20之间 !";//若是 将错误值设置为用户名长度错误
+	console.log("Username length is out of range!");
 	return res.redirect('/register');//重新刷新/register页面
 	}
 	if(!reg.test(username)){//调用reg.test函数测试用户名是否只包含数字大小写字母以及_
-	error+="The username can only be component by zimu number and _ !";
-	console.log("Username can only be component by zimu number and _")
+	error+="用户名必须包含数字、大小写字母和下划线 !";
+	console.log("Username can only be component by zimu number and _");
+	return res.redirect('/register');//重新刷新/register页面
 	}
 
 	if(password.trim().length==0||passwordRepeat.trim().length==0){//判断密码长度以及再次输入的密码长度是否为0
-	error+="password cannot be empty !";//若是 则将错误值设置为密码不可为0
+	error+="密码不能为空 !";//若是 则将错误值设置为密码不可为0
 	console.log("password cannot be empty!");
 	return res.redirect('/register');
 	}
 	if(password.trim().length<6){//判断密码长度是否小于6
-	error+="password cannot be shorter than 6 !";//若是 则提示密码长度小于6
+	error+="密码长度不能小于6 !";//若是 则提示密码长度小于6
 	console.log("password cannot be shorter than 6!");
 	return res.redirect('/register');//重新刷新/register页面
 	}
 	if(!reg2.test(password)){//测试输入的密码是否符合要求 同时包含数字大小写字母
-	error+="password must be component by little big word and number !";//不符合要求则将错误值设置为提示密码组合不符合要求
+	error+="用户名必须包含数字、大小写字母和下划线 !";//不符合要求则将错误值设置为提示密码组合不符合要求
 	console.log("password must have little and big word and number!");
 	return res.redirect('/register');//重新刷新页面
 	}
 
 	if(password!=passwordRepeat){//判断两次密码输入是否相同
-	error+="two input of password are different !";//不相同则提示两次密码输入不一致
+	error+="两次输入密码不相同 !";//不相同则提示两次密码输入不一致
 	console.log("two input of password are different!");
 	return res.redirect('/register');//重新刷新该页面
 	}
@@ -128,7 +129,7 @@ app.post('/register',function(req,res){//获得在/register页面提交的数据
 		return res.redirect('/register');//重新刷新该页面
 	}
        	if(user){//如果查找到了
-		error+="The username is exist !";//错误：提示用户名已经存在
+		error+="该用户名已存在 !";//错误：提示用户名已经存在
 		console.log("The username is exist!");
 		return res.redirect('/register');//重新刷新该页面
 	}
@@ -177,7 +178,7 @@ app.post('/login',function(req,res){//用户在login界面提交数据
 		}
 		if(!user){//如果用户不存在
 		console.log("The user is not exist!");
-		error="The user is not exist or the password is wrong !";//将error值置为用户名不存在或输入密码错误
+		error="用户名或密码错误 !";//将error值置为用户名或密码错误
 		//req.session.err="The user is not exist!";
 		return res.redirect('/login');//重新刷新login界面
 		}
@@ -186,7 +187,7 @@ app.post('/login',function(req,res){//用户在login界面提交数据
 		var md5=crypto.createHash('md5');
 		    md5password=md5.update(password).digest('hex');//通过md5算法对用户密码进行加密存储
 		if(user.password!=md5password){//若输入密码与数据库中对应用户密码不同，则提示密码错误或用户名错误
-		error="The user is not exist or the password is wrong !";
+		error="用户名或密码错误 !";
 		console.log("wrong password!");
 		return res.redirect('/login');//重新刷新login界面
 		}

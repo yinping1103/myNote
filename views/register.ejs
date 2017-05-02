@@ -1,5 +1,5 @@
 <%- include header %><!--嵌入header文件-->
-	<div class="text-center page-title">New User Register</div>
+	<div class="text-center page-title">帐号注册</div>
 	<% if(error){ %>
 	<div class="alert alert-warning"><%= error %></div>
 	<% } %>
@@ -9,26 +9,26 @@
 		    <div class="page__bd">
 			<div class="weui-cells weui-cells_form">
 			    <div class="weui-cell">
-				<div class="weui-cell__hd"><label class="weui-label">Username</label></div>
+				<div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
 				<div class="weui-cell__bd">
-				    <input type="text" class="weui-input" name="username" placeholder="Username"/>
+				    <input type="text" class="weui-input" name="username" placeholder="3-20个字符，含数字、大小写字母和下划线"/>
 				</div>
 			    </div>
 			    <div class="weui-cell">
-				<div class="weui-cell__hd"><label class="weui-label">Password</label></div>
+				<div class="weui-cell__hd"><label class="weui-label">密码</label></div>
 				<div class="weui-cell__bd">
-				    <input type="password" class="weui-input" name="password" placeholder="Password"/>
+				    <input type="password" class="weui-input" name="password" placeholder="6个字符以上，含数字、大小写字母"/>
 				</div>
 			    </div>
 			    <div class="weui-cell">
-				<div class="weui-cell__hd"><label class="weui-label">Password Again</label></div>
+				<div class="weui-cell__hd"><label class="weui-label"> 密码确认</label></div>
 				<div class="weui-cell__bd">
-				    <input type="password" class="weui-input" name="passwordRepeat" placeholder="Password Again"/>
+				    <input type="password" class="weui-input" name="passwordRepeat" placeholder="再次输入密码"/>
 				</div>
 			    </div>
 			</div>
 			<div class="btn-sp-area">
-			    <button type="submit" class="weui-btn weui-btn_primary">Register</button>
+			    <button type="submit" class="weui-btn weui-btn_primary">注册</button>
 			</div>
 		    </div>
 	        </div>

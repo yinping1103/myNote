@@ -1,5 +1,5 @@
 <%- include header %><!--嵌入header文件-->
-	<div class="text-center page-title">User Login</div>
+	<div class="text-center page-title"> 帐号登录</div>
 	<% if(error){ %><!--判断如果error不为空 则使用微信样式在页面中将相应错误打印-->
   	<div class="alert alert-warning"><%= error %></div>
 	<% error='' %>
@@ -11,22 +11,22 @@
 	    <div class="page__bd page__bd_spacing">
 		<div class="weui-cells weui-cells_form">
 		<div class="weui-cell">
-		    <div class="weui-cell__hd"><label class="weui-label">Username</label></div>
+		    <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
 		    <div class="weui-cell__bd">
-			<input type="text" class="weui-input" name="username" placeholder="Username"/>
+			<input type="text" class="weui-input" name="username" placeholder=""/>
 		    </div>
 		</div>
 
 		<div class="weui-cell">
-		    <div class="weui-cell__hd"><label class="weui-label">Password</label></div>
+		    <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
 		    <div class="weui-cell__bd">
-			<input type="password" class="weui-input" name="password" placeholder="Password"/>
+			<input type="password" class="weui-input" name="password" placeholder=""/>
 		    </div>
 		</div>
 
 		</div>
 		<div class="btn-sp-area">
-	    	    <button type="submit" class="weui-btn weui-btn_primary">Login</button>
+	    	    <button type="submit" class="weui-btn weui-btn_primary">登录</button>
 		</div>
 	    </div>
 	</div>
